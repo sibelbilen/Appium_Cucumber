@@ -7,8 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 import utils.Driver;
 
 public class PreferenceScreen {
-    public PreferenceScreen(){
-        PageFactory.initElements(new AppiumFieldDecorator(Driver.getAppiumDriver()),this);
+    public PreferenceScreen() {
+        PageFactory.initElements(new AppiumFieldDecorator(Driver.getAppiumDriver()), this);
     }
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Preference']")
@@ -21,6 +21,7 @@ public class PreferenceScreen {
     public MobileElement switchButton;
 
     @AndroidFindBy(id = "android:id/checkbox")
+
     public MobileElement checkBox;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='WiFi settings']")
@@ -34,8 +35,6 @@ public class PreferenceScreen {
 
     @AndroidFindBy(id = "android:id/edit")
     public MobileElement textBox;
-
-
 
 
     @AndroidFindBy(xpath = "(//android.widget.Switch)[1]")

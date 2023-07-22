@@ -1,6 +1,7 @@
 package screens;
 
 import screens.androidScreen.ApiDemosScreen;
+import screens.androidScreen.PreferenceScreen;
 
 public class Screens {
 public Screens(){
@@ -8,7 +9,7 @@ public Screens(){
 }
 
 private ApiDemosScreen appDemosScreen;
-private PreferenceDependenciesScreen preferenceDependenciesScreen;
+private PreferenceScreen preferencesScreen;
 
 public ApiDemosScreen AppDemosScreen(){
     if (appDemosScreen == null){
@@ -17,11 +18,11 @@ public ApiDemosScreen AppDemosScreen(){
     }
     return appDemosScreen;
 }
-    public PreferenceDependenciesScreen preferenceDependenciesScreen() {
-        if (preferenceDependenciesScreen == null){
-            preferenceDependenciesScreen = new PreferenceDependenciesScreen();
+    public PreferenceScreen preferencesScreen() {
+        if (preferencesScreen == null){
+            preferencesScreen = new PreferenceScreen();
         }
-        return preferenceDependenciesScreen;
+        return preferencesScreen;
     }
 
 }
