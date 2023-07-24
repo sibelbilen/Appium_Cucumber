@@ -11,14 +11,14 @@ public class ApiDemosScreen {
         PageFactory.initElements(new AppiumFieldDecorator(Driver.getAppiumDriver()),this);
     }
 
-    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.ImageView")
+    @AndroidFindBy(xpath = "(//android.widget.ImageView)[1]")
     public MobileElement apiDemosTitle;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Preference']")
 
     public MobileElement preference;
 
-    @AndroidFindBy(id = "com.touchboarder.android.api.demos:id/buttonDefaultPositive")
+    @AndroidFindBy(xpath ="//android.widget.TextView[@text='TAMAM']")
     public MobileElement tamam;
 
 

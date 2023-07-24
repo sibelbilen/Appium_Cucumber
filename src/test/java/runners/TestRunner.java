@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         plugin = {"pretty","html:target/default-cucumber-report"},
         features ="src/test/resources/Features",
         glue ="stepDefinitions",
-        tags ="@swich",
+        tags ="@dragDrop",
         dryRun = false
 )
 public class TestRunner {

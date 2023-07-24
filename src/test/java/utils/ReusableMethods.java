@@ -3,9 +3,16 @@ package utils;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 
@@ -96,6 +103,25 @@ public class ReusableMethods {
         AndroidDriver<MobileElement> driver = (AndroidDriver) Driver.getAppiumDriver();
         driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\""+elementText+"\"))");
         tapOn(driver.findElementByXPath("//android.widget.TextView[@text='" + elementText + "']"));
+    }
+    public static void screenshot_al()  {
+
+        try {
+            //after verification take screenshot
+//       I use this code to take a screenshot when needed
+            // naming the screenshot with the current date to avoid duplication
+            String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+            // TakesScreenshot is an interface of selenium that takes the screenshot
+            TakesScreenshot ts = (TakesScreenshot) Driver.getAppiumDriver();
+            File source = ts.getScreenshotAs(OutputType.FILE);
+            // full path to the screenshot location
+            String target = System.getProperty("user.dir") + "/test-output/Screenshots/" + date + ".png";
+            File finalDestination = new File(target);
+            // save the screenshot to the path given
+            FileUtils.copyFile(source, finalDestination);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public static void scrollDownToBeVisible(MobileElement element) {

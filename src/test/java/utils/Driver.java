@@ -30,9 +30,11 @@ public class Driver {
             desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, ConfigReader.getProperty("platformVersion"));
             desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, ConfigReader.getProperty("deviceName"));
             desiredCapabilities.setCapability(MobileCapabilityType.APP, ConfigReader.getProperty("appPath"));
-//            desiredCapabilities.setCapability(MobileCapabilityType.NO_RESET, true);
+    desiredCapabilities.setCapability(MobileCapabilityType.NO_RESET, true);
             desiredCapabilities.setCapability("autoAcceptAlert",true);
+
             desiredCapabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,"60000");
+
 
             if (ConfigReader.getProperty("platformName").equals("android")) {
             //if you do not provide app path so you should provide "appPackage" and "appActivity"
